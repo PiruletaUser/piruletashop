@@ -1,0 +1,172 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./WEB-INF/Template/template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        <!-- content-section-starts -->
+
+
+        <!-- start registration -->
+        <div class="container">
+            <div class="registration">
+                <div class="registration_left">
+                    <h2>
+                        novo usuário? <span> crie sua conta </span>
+                    </h2>
+                    <div class="reg_fb">
+                        <a href="#DEIXE_DE_SER_PREGUICOSO"> <img src="images/facebook.png" alt="" /><i>registrar usando Facebook</i></a>
+                    </div>
+                    <div class="clearfix"></div>
+
+
+                    <!-- [if IE] < link rel='stylesheet' type='text/css' href='ie.css'/>  [endif] -->
+                    <!-- [if lt IE 7]> < link rel='stylesheet' type='text/css' href='ie6.css'/>	<! [endif] -->
+                    <script>
+
+                        (function () {
+
+                            // Create input element for testing
+                            var inputs = document.createElement('h:inputTexts');
+
+                            // Create the supports object
+                            var supports = {};
+
+                            supports.autofocus = 'autofocus' in inputs;
+                            supports.required = 'required' in inputs;
+                            supports.placeholder = 'placeholder' in inputs;
+
+                            // Fallback for autofocus attribute
+                            if (!supports.autofocus) {
+
+                            }
+
+                            // Fallback for required attribute
+                            if (!supports.required) {
+
+                            }
+
+                            // Fallback for placeholder attribute
+                            if (!supports.placeholder) {
+
+                            }
+
+                            // Change text inside send button on submit
+                            var send = document.getElementById('register-submit');
+                            if (send) {
+                                send.onclick = function () {
+                                    this.innerHTML = '...Sending';
+                                };
+                            }
+
+                        })();
+                    </script>
+                    <div class="registration_form">
+                        <!-- Form -->
+                        <h:form id="registration_form">
+                            <!--<h:inputHidden value="#{clienteBean.cliente.id}" />-->
+                            
+                            <br/><h:messages /><br/>                          
+                            
+                            <h:outputLabel value="Nome:" for="nome"/>
+                            <h:inputText id="nome" value="#{clienteBean.cliente.nome}" required="true"/>
+
+                            <h:outputLabel value="Sobrenome:" for="sobrenome" />
+                            <h:inputText id="sobrenome" value="#{clienteBean.cliente.sobrenome}" required="true"/>
+
+                            <br/><h:outputText value="___" style="color: #F0F0FF" /><br/>
+                            <h:outputLabel value="CPF:" for="cpf" />
+                            <h:inputText value="#{clienteBean.cliente.cpf}" id="cpf" required="true"/>
+
+                            <br/><br/>
+                            <h:selectOneRadio value="#{clienteBean.cliente.sexo}" id="sexo" required="true" class="radiobtn">
+                                <f:selectItem itemValue="M" itemLabel=" Masculino &#160;&#160;" />&#160;
+                                <f:selectItem itemValue="F" itemLabel=" Feminino &#160;&#160;" />&#160;
+                                <f:selectItem itemValue="O" itemLabel=" Outro " />
+                            </h:selectOneRadio>
+
+                            <br/><h:outputText value="___" style="color: #F0F0FF" /><br/>
+                            <h:outputLabel value="E-Mail:" for="email"/>
+                            <h:inputText value="#{clienteBean.cliente.email}" id="email" required="true"/>
+
+                            <h:outputLabel value="Telefone:" for="telefone"/>
+                            <h:inputText value="#{clienteBean.cliente.telefone}" id="telefone" />
+                            <br/><h:outputText value="___" style="color: #F0F0FF" /><br/>
+
+                            <!--<h:inputHidden value="#{clienteBean.cliente.endereco.id}"/>-->
+
+                            <h:outputLabel value="País:" for="pais" />
+                            <h:inputText value="#{clienteBean.cliente.endereco.pais}" id="pais" required="true"/>
+
+                            <h:outputLabel value="Estado:" for="estado" />
+                            <h:inputText value="#{clienteBean.cliente.endereco.estado}" id="estado" required="true"/>
+
+                            <h:outputLabel value="Cidade:" for="cidade" />
+                            <h:inputText value="#{clienteBean.cliente.endereco.cidade}" id="cidade" required="true"/>
+
+                            <h:outputLabel value="Bairro:" for="bairro" />
+                            <h:inputText value="#{clienteBean.cliente.endereco.bairro}" id="bairro" required="true"/>
+                            
+                            <h:outputLabel value="Logradouro:" for="logradouro" />
+                            <h:inputText value="#{clienteBean.cliente.endereco.logradouro}" id="logradouro" required="true"/>
+
+                            <h:outputLabel value="Número:" for="numero" />
+                            <h:inputText value="#{clienteBean.cliente.endereco.numero}" id="numero" required="true"/>
+
+                            <br/><h:outputText value="___" style="color: #F0F0FF" /><br/>
+                            <h:outputLabel value="Login:" for="login"/>
+                            <h:inputText value="#{clienteBean.cliente.login}" id="login" required="true" />
+
+                            <h:outputLabel value="Senha:" for="senha"/>
+                            <h:inputSecret value="#{clienteBean.cliente.senha}" id="senha" required="true" />
+
+                            <br/><br/>
+
+                            <h:commandButton action="#{clienteBean.insere}" value="Criar Conta" id="insere"/>
+
+                        </h:form>
+                        <!-- /Form -->
+                    </div>
+                </div>
+                <div class="registration_left">
+                    <h2>Conta existente</h2>
+                    <a href="#NOPE"><div class="reg_fb">
+                            <img src="images/facebook.png" alt="" /><i>Entrar usando Facebook</i>
+                            <div class="clear"></div>
+                        </div></a>
+
+                    <div class="registration_form">
+                        <!-- Form -->
+                        <!--<form id="registration_form">-->
+                            <h:form>
+                            <div>
+                               <h:outputLabel value="Login:" for="login"/>
+                               <h:inputText value="#{clienteBean.LOGINlogin}" id="login" required="true" />
+                            </div>
+                            <div>
+                                <h:outputLabel value="Senha:" for="senha"/>
+                            <h:inputSecret value="#{clienteBean.LOGINsenha}" id="senha" required="true" />
+                            </div>
+                            <div>
+                                <h:commandLink action="#{clienteBean.logar(clienteBean.LOGINlogin, clienteBean.LOGINsenha)}" >
+                                <input type="submit" value="Entrar" id="register-submit"   />
+                                </h:commandLink>
+                            </div>
+                            <div class="forget">
+                                <a href="#NAO_DEVIA_TER_ESQUECIDO">Esqueceu sua senha?</a>
+                            </div>
+                            </h:form>
+                        <!--</form>-->
+                        <!-- /Form -->
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- </div>
+</div> -->
+        <!-- content-section-ends -->
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,133 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./WEB-INF/Template/templateP.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"> 
+
+    <ui:define name="content">
+        <!-- content-section-starts -->
+        <div class="container">
+            <div class="products-page">
+                <div class="product">
+                    <div class="product-listy">
+                        <h3>our Products</h3>
+                        <ul class="product-list">
+                            <li><a href="">New Products</a></li>
+                            <li><a href="">Old Products</a></li>
+                            <li><a href="">T-shirts</a></li>
+                            <li><a href="">pants</a></li>
+                            <li><a href="">Dress</a></li>
+                            <li><a href="">Shorts</a></li>
+                            <li><a href="#">Shirts</a></li>
+                            <li><a href="account.xhtml">Register</a></li>
+                        </ul>
+                    </div>
+                    <div class="latest-bis">
+                        <img src="images/imgpadrao.png" class="img-responsive"/>
+                        <div class="offer">
+                            <p>40%</p>
+                            <small>Top Offer</small>
+                        </div>
+                    </div>
+                    <div class="tags">
+                        <h4 class="tag_head">Tags Widget</h4>
+                        <ul class="tags_links">
+                            <li><a href="#">Kitesurf</a></li>
+                            <li><a href="#">Super</a></li>
+                            <li><a href="#">Duper</a></li>
+                            <li><a href="#">Theme</a></li>
+                            <li><a href="#">Men</a></li>
+                            <li><a href="#">Women</a></li>
+                            <li><a href="#">Equipment</a></li>
+                            <li><a href="#">Best</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Men</a></li>
+                            <li><a href="#">Apparel</a></li>
+                            <li><a href="#">Super</a></li>
+                            <li><a href="#">Duper</a></li>
+                            <li><a href="#">Theme</a></li>
+                            <li><a href="#">Responsiv</a></li>
+                            <li><a href="#">Women</a></li>
+                            <li><a href="#">Equipment</a></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                <div class="new-product">
+                    <div class="new-product-top">
+                        <ul class="product-top-list">
+                            <li><a href="index.xhtml">Home</a><span>&gt;</span></li>
+                            <li><span class="act">Best Sales</span></li>
+                        </ul>
+                        <p class="back"><a href="index.xhtml">Voltar à Home</a></p>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="mens-toolbar">
+
+                        <ul class="women_pagenation dc_paginationA dc_paginationA06">
+                            <li><a href="#" class="previous">Página:</a></li>
+                            <li class="active"><a href="#">1</a></li>
+
+                        </ul>
+                        <div class="clearfix"></div>		
+                    </div>
+                    <div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
+                        <div class="cbp-vm-options">
+                            <a href="#" class="cbp-vm-icon cbp-vm-grid cbp-vm-selected" data-view="cbp-vm-view-grid" title="grid">Grid View</a>
+                            <a href="#" class="cbp-vm-icon cbp-vm-list" data-view="cbp-vm-view-list" title="list">List View</a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <ul>
+
+                            <ui:repeat var="p" value="#{produtoBean.produtos}" varStatus="status">
+  
+                                    <li>
+                                        <h:form id="teste">
+                                            <h:outputLink class="cbp-vm-image" value="single.xhtml">
+                                                <f:param name="id" value="#{p.ID-1}"/>
+                                                <div class="view view-first">
+                                                    <div class="inner_content clearfix">
+                                                        <div class="product_image">
+                                                            <img src="#{p.imagem1}" class="img-responsive" alt=""/>
+                                                            <div class="mask">
+                                                                <div class="info">Ver</div>
+                                                            </div>
+                                                            <div class="product_container">
+                                                                <div class="cart-left">
+                                                                    <p class="title">#{p.nome}</p>
+                                                                </div>
+                                                                <div class="pricey"><br/>#{produtoBean.precoString(p.preco)} PCoins</div>
+                                                                <div class="clearfix"></div>
+                                                            </div>		
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </h:outputLink>
+                                            <div class="cbp-vm-details">
+                                                #{p.descricao}
+                                            </div>
+                                            <h:commandButton value="Adicionar ao Carrinho" action="#{carrinhoBean.InserirItemCarrinho(p.nome , p.preco)}">
+
+                                            </h:commandButton>
+                                            <br/>
+                                        </h:form>
+                                    </li>
+
+                            </ui:repeat>
+
+
+
+                        </ul>
+                    </div>
+                    <script src="js/cbpViewModeSwitch.js" type="text/javascript"></script>
+                    <script src="js/classie.js" type="text/javascript"></script>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <!-- content-section-ends -->	
+
+    </ui:define>
+</ui:composition>

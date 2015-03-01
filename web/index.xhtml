@@ -1,0 +1,264 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./WEB-INF/Template/template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"> 
+
+    <ui:define name="content">
+        <div class="header">
+            <div class="header-top">
+                <div class="container">
+                    <!--script-nav-->
+                    <script>
+                        $("span.menu").click(function () {
+                            $(".top-menu ul").slideToggle("slow", function () {
+                            });
+                        });</script>
+                    <!--script-nav-->
+
+                    <script>
+                        $("span.menu").click(function () {
+                            $(".top-menu ul").slideToggle("slow", function () {
+                            });
+                        });
+                    </script>
+                    <!--script-nav-->
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="slider">
+                <div id="ipresenter">
+                    <div id="intro" class="step" data-x="0" data-y="0" data-thumbnail="images/barbeador2.png">
+                        <img src="images/barbeador2.png" />
+                    </div>
+
+                    <div id="capture" class="step" data-x="1100" data-y="1200" data-scale="1.8" data-rotate="180" data-thumbnail="images/agua1.jpg">
+                        <img src="images/agua1.jpg" />
+                        <h2>2L de Água em Pó!</h2>
+                    </div>
+
+                    <div id="view" class="step" data-x="-300" data-y="600" data-scale="0.5" data-rotate="270" data-thumbnail="images/demonio1.png">
+                        <img src="images/demonio1.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-32024393-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+        <!-- content-section-starts -->
+        <div class="content">
+            <div class="sales">
+                <div class="container">
+                    <div class="sales-grids">
+                        <div class="col-md-4 sales-grid-a">
+                            <div class="discount">
+                                <h4>Promoção 60%</h4>
+                            </div>
+                            <div class="s-img">
+                                <img src="images/s1.png" alt="" />
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-md-4 sales-grid-b">
+                            <div class="discount">
+                                <h4>Frete Grátis</h4>
+                            </div>
+                            <div class="s-img">
+                                <img src="images/s2.png" alt="" />
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-md-4 sales-grid-c">
+                            <div class="discount">
+                                <h4>Suporte 24/7</h4>
+                            </div>
+                            <div class="s-img">
+                                <img src="images/s3.png" alt="" />
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- products-section-starts -->
+            <div class="products-section">
+                <div class="container">
+                    <div class="product-section-head-text">
+                        <h3>PRODUTOS <span>ESPECIAIS</span></h3>
+                    </div>
+                    <div class="bottom-grids collections">
+                        <div class="bottom-grids-left">
+                            <div class="f-products">
+                                <!--sreen-gallery-cursual-->
+                                <div class="sreen-gallery-cursual">
+                                    <!-- requried-jsfiles-for owl -->
+                                    <link href="css/owl.carousel.css" rel="stylesheet"/>
+                                    <script src="js/owl.carousel.js"></script>
+                                    <script>
+            $(document).ready(function () {
+                $("#owl-demo").owlCarousel({
+                    items: 3,
+                    lazyLoad: true,
+                    autoPlay: true,
+                    navigation: true,
+                    navigationText: false,
+                    pagination: false
+                });
+            });
+                                    </script>
+                                    <!-- //requried-jsfiles-for owl -->
+                                    <!-- start content_slider -->
+                                    <h:form>
+                                    <div id="owl-demo" class="owl-carousel text-center">
+                                        <h:commandLink class="cbp-vm-image" hreflang="#" action="#{produtoBean.single(2)}">
+                                            <div class="item">
+                                                <div onclick="location.href = '#';" class="product-grid">
+                                                    <div class="product-pic">
+                                                        <img src="images/verbo1.jpg" title="Guia de Conjugação Verbal" />
+                                                    </div>
+                                                    <div class="product-pic-info">
+                                                        <h4><a href="#">Guia de Conjugação Verbal</a></h4>
+                                                        <div class="product-pic-info-price-cart">
+                                                            <div class="product-pic-info-price">
+                                                                <span>500 PCoins</span>
+                                                            </div>
+
+                                                            <div class="clearfix"> </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </h:commandLink>
+                                        <div class="item">
+                                            <h:commandLink class="cbp-vm-image" hreflang="#" action="#{produtoBean.single(4)}">
+                                                <div onclick="location.href = '#';" class="product-grid">
+                                                    <div class="product-pic">
+                                                        <img src="images/moedas1.jpg" title="100 Reais em Moedas" />
+                                                    </div>
+                                                    <div class="product-pic-info">
+                                                        <h4><a href="#">100 Reais em Moedas</a></h4>
+                                                        <div class="product-pic-info-price-cart">
+                                                            <div class="product-pic-info-price">
+                                                                <span>2000 PCoins</span>
+                                                            </div>
+
+                                                            <div class="clearfix"> </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </h:commandLink>
+                                        </div>
+
+                                        <div class="item">
+                                            <h:commandLink class="cbp-vm-image" hreflang="#" action="#{produtoBean.single(6)}">
+                                                <div onclick="location.href = 'single-page.xhtml';" class="product-grid">
+                                                    <div class="product-pic">
+                                                        <img src="images/cadeira1.jpg" title="Kit de Demolição de Ar Condicionados" />
+                                                    </div>
+                                                    <div class="product-pic-info">
+                                                        <h4><a href="#">Kit de Demolição de Ar Condicionados</a></h4>
+                                                        <div class="product-pic-info-price-cart">
+                                                            <div class="product-pic-info-price">
+                                                                <span>8500 PCoins</span>
+                                                            </div>
+
+                                                            <div class="clearfix"> </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </h:commandLink>
+                                        </div>
+
+                                        <div class="item">
+                                            <h:commandLink class="cbp-vm-image" hreflang="#" action="#{produtoBean.single(5)}">
+                                                <div onclick="location.href = '#';" class="product-grid">
+                                                    <div class="product-pic">
+                                                        <img src="images/wookie1.jpg" title="Dicionário Wookie" />
+                                                    </div>
+                                                    <div class="product-pic-info">
+                                                        <h4><a href="#">Dicionário Wookie</a></h4>
+                                                        <div class="product-pic-info-price-cart">
+                                                            <div class="product-pic-info-price">
+                                                                <span>1400 PCoins</span>
+                                                            </div>
+
+                                                            <div class="clearfix"> </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </h:commandLink>
+                                        </div>
+
+                                        <div class="item">
+                                            <h:commandLink class="cbp-vm-image" hreflang="#" action="#{produtoBean.single(7)}">
+                                                <div onclick="location.href = '#';" class="product-grid">
+                                                    <div class="product-pic">
+                                                        <img src="images/treta1.jpeg" title="Vale Treta" />
+                                                    </div>
+                                                    <div class="product-pic-info">
+                                                        <h4><a href="#">Vale Treta</a></h4>
+                                                        <div class="product-pic-info-price-cart">
+                                                            <div class="product-pic-info-price">
+                                                                <span>69 PCoins</span>
+                                                            </div>
+
+                                                            <div class="clearfix"> </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </h:commandLink>
+                                        </div>
+                                    </div>
+                                    </h:form>
+                                    <!--//sreen-gallery-cursual-->
+
+
+                                </div>
+                            </div>
+                            <div class="product-section-head-text">
+                                <!--sreen-gallery-cursual-->
+                                <div class="sreen-gallery-cursual">
+                                    <!-- requried-jsfiles-for owl -->
+                                    <link href="css/owl.carousel.css" rel="stylesheet"/>
+                                    <script src="js/owl.carousel.js"></script>
+                                    <script>
+                                                    $(document).ready(function () {
+                                                        $("#owl-demo2").owlCarousel({
+                                                            items: 3,
+                                                            lazyLoad: true,
+                                                            autoPlay: true,
+                                                            navigation: false,
+                                                            navigationText: false,
+                                                            pagination: false
+                                                        });
+                                                    });
+                                    </script>
+                                    <!-- //requried-jsfiles-for owl -->
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content-section-ends -->
+    </ui:define>
+
+</ui:composition>

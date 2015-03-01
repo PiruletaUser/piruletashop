@@ -1,0 +1,37 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./WEB-INF/Template/template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        <!-- content-section-starts -->
+<div class="container">
+            <div class="registration">
+                
+                    <h2 style="font-size: 3em">
+                        Usuário
+                    </h2>
+                <h4 style="font-size: 2em">Nome: <br/><h:outputText value="#{clienteBean.cliente.nome} " style="font-size: 0.9em"/> <h:outputText value="#{clienteBean.cliente.sobrenome}" style="font-size: 0.9em"/>
+                    <br/><br/>E-Mail:<br/> <h:outputText value="#{clienteBean.cliente.email}" style="font-size: 0.9em"/>
+                    <br/><br/>Local:<br/> <h:outputText value="#{clienteBean.cliente.endereco.cidade}" style="font-size: 0.9em"/> - <h:outputText value="#{clienteBean.cliente.endereco.estado}" style="font-size: 0.9em"/>
+                    
+                    
+                    
+                    <br/><br/><br/>
+                    <h:form>
+                        <h:commandButton value="Sair" action="#{clienteBean.deslogar()}"/>
+                    </h:form>
+                    </h4>
+                
+            </div>
+            
+</div>
+
+        
+        <!-- </div>
+</div> -->
+        <!-- content-section-ends -->
+    </ui:define>
+
+</ui:composition>

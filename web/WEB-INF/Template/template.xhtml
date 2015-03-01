@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>PiruletaShop</title>
+        <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Custom Theme files -->
+        <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/demo1.css" rel="stylesheet" type="text/css" media="all" />
+        <!-- Custom Theme files -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <!--webfont-->
+        <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200,300,700' rel='stylesheet' type='text/css'/>
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'/>
+        <link href='http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'/>
+        <!-- JavaScript includes -->
+        <script src="js/ipresenter.packed.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#ipresenter').iPresenter({
+                    timerPadding: -1,
+                    controlNav: true,
+                    controlNavThumbs: true,
+                    controlNavNextPrev: false
+                });
+            });
+        </script>
+        <script type="text/javascript" src="js/move-top.js"></script>
+        <script type="text/javascript" src="js/easing.js"></script>
+        <script type="text/javascript">
+                    jQuery(document).ready(function ($) {
+                        $(".scroll").click(function (event) {
+                            event.preventDefault();
+                            $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1200);
+                        });
+                    });
+        </script>
+    </h:head>
+
+    <h:body>
+        <f:metadata>
+            <f:event listener="#{produtoBean.produtosDatabase}" type="preRenderView" />
+        </f:metadata>
+
+        <!-- header-section-starts -->
+
+        <div class="user-desc">
+            <div class="container">
+                <ul>
+                    <li><a href="addprodutos.xhtml"><img src="#{clienteBean.adminimg}" style="display: inline-block; vertical-align: middle;"/>#{clienteBean.admintexto}</a></li>
+                    <li><a href="#{clienteBean.minhaContaLink}.xhtml"><i class="user"></i>#{clienteBean.minhaContaTexto}</a></li>
+                    <li><a href="carteira.xhtml"><img src="#{clienteBean.carteiraimg}" style="display: inline-block; vertical-align: middle;"/>#{clienteBean.coinsStr}</a></li>
+                    <li><a href="checkout.xhtml"><i class="cart"></i>Carrinho</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="logo">
+                        <a href="index.xhtml"><img src="images/logo.png" alt="" /></a>
+                    </div>
+                    <div class="top-menu">
+                        <span class="menu"> </span>
+                        <ul class="cl-effect-15">
+                            <li><a href="index.xhtml" data-hover="HOME">HOME</a></li>
+                            <li><a href="404.xhtml" data-hover="NOVIDADES">NOVIDADES</a></li>
+                            <li><a href="products.xhtml" data-hover="PRODUTOS">PRODUTOS</a></li>
+                            <li><a href="404.xhtml" data-hover="RECURSOS">RECURSOS</a></li>
+                            <li><a href="contact.xhtml" data-hover="CONTATO">CONTATO</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header-section-ends -->
+        <!-- content-section-starts -->
+
+        <div id="container">
+            <ui:insert name="content">
+            </ui:insert>
+        </div>
+
+        <!-- content-section-ends -->
+        <!-- contact-section-starts -->
+        <div class="content-section">
+            <div class="container">
+                <div class="col-md-3 about-us">
+                    <h4>SOBRE</h4>
+                    <p>
+                        <span>Sed posuere</span> consectetur est at. Nulla vitae elit
+                        libero, a pharetra. Lorem ipsum <span>dolor sit</span> amet,
+                        consectetuer adipiscing elit.
+                    </p>
+                    <h4>SIGA-NOS</h4>
+                    <div class="social-icons">
+                        <i class="facebook"></i> <i class="twitter"></i> <i class="rss"></i>
+                        <i class="vimeo"></i> <i class="dribble"></i> <i class="msn"></i>
+                    </div>
+                </div>
+                <div class="col-md-3 archives">
+                    <h4>ARQUIVOS</h4>
+                    <ul>
+                        <li><a href="#">Janeiro 2015</a></li>
+                        <li><a href="#">Dezembro 2014</a></li>
+                        <li><a href="#">Novembro 2014</a></li>
+                        <li><a href="#">Outubro 2014</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 contact-us">
+                    <h4>CONTATE-NOS</h4>
+                    <ul>
+                        <li><i class="message"></i></li>
+                        <li><a href="infoleiaut2014@gmail.com">infoleiaut2014@gmail.com</a></li>
+                    </ul>
+                    <ul>
+                        <li><i class="land-phone"></i></li>
+                        <li>4002-8922</li>
+                    </ul>
+                    <ul>
+                        <li><i class="smart-phone"></i></li>
+                        <li>+73344486667777</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 about-us">
+                    <h4>ASSINE O NEWSLETTER</h4>
+                    <input type="text" class="text" value="Nome" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                            this.value = 'Name';
+                                        }"/> 
+                    <input type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                            this.value = 'Email';
+                                        }"/> 
+                    <input type="submit" value="ASSINAR"/>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- contact-section-ends -->
+        <!-- footer-section-starts -->
+        <div class="footer">
+            <div class="container">
+                <div class="col-md-6 bottom-menu">
+                    <ul>
+                        <li><a href="index.xhtml">HOME</a></li>
+                        <li><a href="#">PORTFOLIO</a></li>
+                        <li><a href="#">MAPA</a></li>
+                        <li><a href="contact.xhtml"> CONTATO</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 copy-rights">
+                    <img src="http://images.uncyc.org/pt/b/b5/Pogpowered2.gif"/>
+                    <p>
+                        2015 Template by <a href="http://w3layouts.com"
+                                            target="target_blank">W3layouts</a>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- footer-section-ends -->
+    </h:body>
+</html>

@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./WEB-INF/Template/template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"> 
+
+    <ui:define name="content">
+        <!-- content-section-starts -->
+        <div style="float: right">
+        <br/><br/><br/><br/>
+  
+        <img src="images/walletbig.png" width="35%" height="auto"/>
+         </div>
+        <div style="padding-left: 20%; padding-top: 5%;">
+        <h1 style="font-size: 4.20em">Carteira de #{clienteBean.cliente.nome}</h1>
+        <br/><br/>
+        
+        <h1>
+            Saldo Atual: <h2 style="color: #0AA5E2">#{clienteBean.cliente.coins} Piruleta Coins </h2>
+        
+            <br/><br/>
+            <h:form>
+                <h:commandButton value="Compre Piruleta Coins" action="#{carrinhoBean.comprarMoedas()}" style="background-color: #404040; font-size: 2em; color: white; border-radius: 1%; padding: 1% 1% 1% 1%; margin: auto;"/>
+            </h:form>
+        
+        </h1>
+        </div>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        
+        <!-- content-section-ends -->	
+    </ui:define>
+
+</ui:composition>

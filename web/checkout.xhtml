@@ -1,0 +1,87 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./WEB-INF/Template/template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"> 
+
+    <ui:define name="content">
+
+        <!-- content-section-starts -->
+        <div class="container">
+            <div class="My-wish-section">
+                <section id="wish" />
+                <div class="my-wish-content">
+                    <div class="pag-nav">
+                        <ul class="p-list">
+                            <li><a href="index.xhtml">Home</a></li>
+                            <h:outputText>   </h:outputText>
+                            <li class="act">- Carrinho</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="c-head">Seu Carrinho</h3>
+
+                        <div style="float: left; padding-left: 2%;">
+                            <h1>Nome </h1><br/>
+
+                            <ui:repeat var="c" value="#{carrinhoBean.carrinho}">
+                                <h2>
+                                    <div style="padding-top: 2%; text-align: left;">
+                                    #{c.nome} <br/>
+                                    </div>
+                                </h2>
+                            </ui:repeat>
+
+                        </div>
+                         
+                        <div style="float: right; padding-left: 4%; text-align: center; ">
+                            <h1> Remover</h1><br/>
+
+                            <ui:repeat var="c" value="#{carrinhoBean.carrinho}">
+                                <h2>
+                                    <div style="padding-top: 6%">
+                                    <h:form  style="box-shadow: 0px 1px 1px black;">
+                                        <h:commandLink action="#{carrinhoBean.RemoverItemCarrinho(c.ID)}">
+                                            X<br/>
+                                        </h:commandLink>
+                                    </h:form>
+                                    </div>
+                                </h2>
+                            </ui:repeat>
+                        </div>
+
+                        <div style="float: right;">
+                            <h1>Preço</h1><br/>
+
+                            <ui:repeat var="c" value="#{carrinhoBean.carrinho}">
+                                <h2>
+                                    <div style="padding-top: 5%">
+                                    #{c.preco} PCoins<br/>
+                                    </div>
+                                </h2>
+                            </ui:repeat>
+                        </div>
+
+                        
+                        <div class="coats sing-c">
+                            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                            <h2>Soma Total: <h:outputText value="#{carrinhoBean.somaTotal}"/></h2>
+
+                            <br/><br/><br/><br/>
+                            <h:form>
+                                <h:commandButton action="#{carrinhoBean.Comprar}" value ="Finalizar Compra" style="padding: 1% 1% 1%; font-size: 1.5em;"/> 
+                           <br/><br/>
+                                <h:commandButton action="#{carrinhoBean.ResetarCarrinho}" value ="Esvaziar Carrinho" style="padding: 1% 1% 1%; font-size: 1.5em;"/>
+                               
+                            </h:form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- content-section-ends -->
+    </ui:define>
+
+</ui:composition>
